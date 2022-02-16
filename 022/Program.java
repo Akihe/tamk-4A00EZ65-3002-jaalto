@@ -28,6 +28,6 @@ class Pen {
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
-        }
+        } else return false;
     }
 }
