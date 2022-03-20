@@ -40,28 +40,36 @@ class Coordinate {
     }
 
     Coordinate(double x, double y) {
-        this.x = x;
-        this.y = y;
+        setX(x);
+        setY(y);
         this.z = 0;
     }
 
     Coordinate(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        setX(x);
+        setY(y);
+        setZ(z);;
     }
 
     public double getX() {
         return x;
     }
     public void setX(double x) {
-        this.x = x;
+        if (x > 100) {
+            this.x = 100;
+        } else if (x < 0) {
+            this.x = 0;
+        } else this.x = x;
     }
     public double getY() {
         return y;
     }
     public void setY(double y) {
-        this.y = y;
+        if (y > 100) {
+            this.y = 100;
+        } else if (y < 0) {
+            this.y = 0;
+        } else this.y = y;
     }
     public double getZ() {
         return z;

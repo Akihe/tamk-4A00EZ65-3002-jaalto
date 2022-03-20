@@ -34,28 +34,36 @@ class Coordinate {
     }
 
     Coordinate(double x, double y) {
-        this.x = x;
-        this.y = y;
+        setX(x);
+        setY(y);
         this.z = 0;
     }
 
     Coordinate(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        setX(x);
+        setY(y);
+        setZ(z);;
     }
 
     public double getX() {
         return x;
     }
     public void setX(double x) {
-        this.x = x;
+        if (x > 100) {
+            this.x = 100;
+        } else if (x < 0) {
+            this.x = 0;
+        } else this.x = x;
     }
     public double getY() {
         return y;
     }
     public void setY(double y) {
-        this.y = y;
+        if (y > 100) {
+            this.y = 100;
+        } else if (y < 0) {
+            this.y = 0;
+        } else this.y = y;
     }
     public double getZ() {
         return z;
@@ -71,37 +79,29 @@ class Coordinate {
     }
 
     public void up(double move) {
-        y = y + move;
-        if (y > 100) {
-            y = 100;
-        }
+        double newY = y + move;
+        setY(newY);
     }
 
     public void down(double move) {
-        y = y - move;
-        if (y < 0) {
-            y = 0;
-        }
+        double newY = y - move;
+        setY(newY);
     }
 
     public void left(double move) {
-        x = x - move;
-        if (x < 0) {
-            x = 0;
-        }
+        double newX = x - move;
+        setX(newX);
     }
 
     public void right(double move) {
-        x = x + move;
-        if (x > 100) {
-            x = 100;
-        }
+        double newX = x + move;
+        setX(newX);
     }
 
     @Override
     public String toString() {
-        return String.format("X: %f%n" +
-                             "Y: %f%n" +
-                             "Z: %f", x, y, z );
+        return String.format("X: %.0f" +
+                             " Y: %.0f" +
+                             " Z: %.0f", x, y, z );
     }
 }
