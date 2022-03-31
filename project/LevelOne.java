@@ -57,6 +57,9 @@ public class LevelOne {
 
             int damageDone = player.attack();
             enemy.setHealth(enemy.getHealth() - damageDone);
+            if (enemy.getHealth() <= 0) {   //Breaks the loop before the enemies turn if its dead.
+                break;
+            }
             player.setHealth(player.getHealth() - enemyMove());
 
             System.out.println(); //print an empty line
