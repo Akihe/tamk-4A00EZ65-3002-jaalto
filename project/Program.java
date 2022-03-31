@@ -5,7 +5,7 @@ import java.io.Console;
  * @author Aki Helin aki.helin@tuni.fi
  * @version 1.0
  *
- * A small game created in purpose of practicing java.
+ * A small game created in purpose of practicing java. Could be expanded by creating more levels, weapons and for example possibility to upgrade your character.
  */
 public class Program {
     /**

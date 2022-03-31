@@ -1,13 +1,35 @@
 package project;
-
 import java.io.Console;
 
+/**
+ *
+ */
 public class LevelOne {
+    /**
+     * Holds the players object
+     */
     CharacterBase player;
+
+    /**
+     * Holds the enemy object
+     */
     Enemy enemy;
+
+    /**
+     * For players input
+     */
     Console input;
+
+    /**
+     * Players choice of attack as an integer
+     */
     int attackInt;
 
+    /**
+     * Creates an enemy object for the player to fight, starts the fight.
+     * @param player player object
+     * @param weapon weapon object
+     */
     LevelOne(CharacterBase player, Weapon weapon) {
         input = System.console();
         this.player = player;
@@ -15,14 +37,22 @@ public class LevelOne {
         fight();
     }
 
+    /**
+     * Handles the fight in level one. Loops the game as long as player or enemy has above 0 health.
+     * Shows the player his possible choices asks for his choice.
+     */
     void fight() {
+        System.out.println();
+        System.out.println("Prepare for your first fight!");
+        System.out.println();
+
         while (enemy.getHealth() > 0 && player.getHealth() > 0) {
             System.out.println("Player's turn, choose your move!");
             player.printAttacks();
             checkChoice();
 
             if (attackInt == 2) {
-                player.flee();
+                player.flee();  //Shuts the game down if the player chooses to flee.
             }
 
             int damageDone = player.attack();
@@ -41,11 +71,14 @@ public class LevelOne {
         }
     }
 
+    /**
+     * Checks wether players chosen input is valid. If not, asks again.
+     */
     void checkChoice() {
         while(true) {
             try {
-                String attackChoise = input.readLine();
-                attackInt = Integer.parseInt(attackChoise);
+                String attackChoice = input.readLine();
+                attackInt = Integer.parseInt(attackChoice);
                 if (attackInt > 2 || attackInt < 1) {
                     System.out.println("Wrong input, please type 1 or 2");
                     continue;
@@ -58,9 +91,13 @@ public class LevelOne {
         }
     }
 
+    /**
+     * Uses a random attack move from the enemy.
+     * @return the damage of the chosen attack
+     */
     int enemyMove() {
-        double choise = Math.random();
-        if (choise < 0.6) {
+        double choice = Math.random();
+        if (choice < 0.6) {
                 return enemy.attack();
         } else return enemy.roar();
     }
