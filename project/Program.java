@@ -20,7 +20,7 @@ public class Program {
                                             "[%d]%s", 1, " Orc", 2, " Human"));
 
             String charChoise = input.readLine();
-            int charChoiseInt = integerCheck(charChoise);
+            charChoiseInt = integerCheck(charChoise);
 
             System.out.println("Choose your weapon");
             System.out.println(String.format("[%d]%s%n" +
