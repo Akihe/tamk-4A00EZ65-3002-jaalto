@@ -1,12 +1,14 @@
 package project;
 
 /**
- * BasicStats
+ * CharacterBase
  */
-abstract class BasicStatsAndSkills {
+abstract class CharacterBase {
     private int health;
     private int manapoints;
     private int strength;
+
+    abstract void attack();
 
     public void flee() {
         System.out.println("The player chose to flee!");
