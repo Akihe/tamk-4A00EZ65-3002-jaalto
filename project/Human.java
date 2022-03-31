@@ -1,5 +1,8 @@
 package project;
 
+/**
+ *
+ */
 public class Human extends CharacterBase {
 
     Human(String name, int health, int manapoints, int damage) {
@@ -8,14 +11,10 @@ public class Human extends CharacterBase {
 
     @Override
     int attack() {
+        System.out.println("You deal " + getDamage() + " damage!");
         return this.getDamage();
     }
 
-    @Override
-    public void flee() {
-        // TODO Auto-generated method stub
-
-    }
     @Override
     void printAttacks() {
         System.out.println("[1] Attack");
