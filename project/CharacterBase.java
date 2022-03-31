@@ -20,9 +20,9 @@ abstract class CharacterBase {
     abstract int attack();
 
     public void flee() {
-        System.out.println("The player chose to flee!");
+        System.out.println("The player chose to flee! You didnt die but you have to start over.");
+        System.exit(1);
     }
-
 
     public String getName() {
         return name;
