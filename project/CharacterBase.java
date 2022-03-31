@@ -6,12 +6,34 @@ package project;
 abstract class CharacterBase {
     private int health;
     private int manapoints;
-    private int strength;
+    private int damage;
+    private String name;
 
-    abstract void attack();
+    CharacterBase(String name, int health, int manapoints, int damage) {
+        this.name = name;
+        this.health = health;
+        this.manapoints = manapoints;
+        this.damage = damage;
+    }
+
+    abstract void printAttacks();
+    abstract int attack();
 
     public void flee() {
         System.out.println("The player chose to flee!");
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getDamage() {
+        return damage;
     }
 
     public void setHealth(int health) {
