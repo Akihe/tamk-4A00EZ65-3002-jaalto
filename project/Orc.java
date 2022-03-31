@@ -8,18 +8,14 @@ public class Orc extends CharacterBase {
 
     @Override
     int attack() {
+        System.out.println("You deal " + getDamage() + " damage!");
         return this.getDamage();
-
-    }
-    @Override
-    public void flee() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     void printAttacks() {
-        // TODO Auto-generated method stub
-
+        System.out.println("[1] Attack");
+        System.out.println("[2] Flee");
     }
 }
