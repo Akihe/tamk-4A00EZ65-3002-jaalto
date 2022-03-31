@@ -100,7 +100,7 @@ public class LevelOne {
      */
     int enemyMove() {
         double choice = Math.random();
-        if (choice < 0.6) {
+        if (choice < 0.5) {
                 return enemy.attack();
         } else return enemy.roar();
     }
