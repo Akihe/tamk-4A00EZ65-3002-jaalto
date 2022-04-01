@@ -33,6 +33,7 @@ public class Game {
         this.charName = charName;
         welcome();
         LevelOne levelOne = new LevelOne(player, weapon);
+        LevelTwo levelTwo = new LevelTwo(player, weapon);
     }
 
     /**
