@@ -2,7 +2,7 @@ package project;
 import java.io.Console;
 
 /**
- *
+ * LevelOne has the first fight for the player.
  */
 public class LevelOne {
     /**
@@ -70,7 +70,7 @@ public class LevelOne {
         if (enemy.getHealth() <= 0) {
             System.out.println("You won!");
         } else if (player.getHealth() <= 0) {
-            System.out.println("You lost, try again!");
+            System.out.println("You lost the first fight, good luck for the second one!");
         }
     }
 
