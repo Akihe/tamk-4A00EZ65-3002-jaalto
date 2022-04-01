@@ -114,7 +114,7 @@ public class LevelTwo {
     }
 
     /**
-     * Reduces the health of the enemies in order from first to last.
+     * Reduces the health of the enemies in order from first to last. Poor implementation but it'll do.
      * @param damagedone damage done by the player
      */
     void reduceEnemyHealth(int damagedone) {
